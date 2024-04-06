@@ -1308,7 +1308,7 @@ struct atom_context *atom_parse(struct card_info *card, void const *bios)
         pr_info("ATOM BIOS: %s\n", str);
 
         // Copy and check for error
-        if (strscpy(ctx->vbios_version, str, sizeof(ctx->vbios_version)) == E2BIG)
+        if (strscpy(ctx->vbios_version, str, sizeof(ctx->vbios_version)) == -E2BIG)
             AURA_WARN("Bios version string too long");
 
     }

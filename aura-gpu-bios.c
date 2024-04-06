@@ -1238,7 +1238,7 @@ static void _aura_gpu_bios_read_name(
     if (*name_str != '\0')
 
         // Copy and check for error
-        if (strscpy(context->bios.name, name_str, sizeof(context->bios.name)) == E2BIG)
+        if (strscpy(context->bios.name, name_str, sizeof(context->bios.name)) == -E2BIG)
             AURA_WARN("Bios name too long");
 
 }
